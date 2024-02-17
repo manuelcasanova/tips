@@ -39,7 +39,7 @@ app.put("/data/:property", async (req, res) => {
 
   try {
     // Use parameterized queries to prevent SQL injection
-    await pool.query(`UPDATE tipsdistributiondata SET ${property} = $1`, [value]);
+    await pool.query(`UPDATE tipsdata SET ${property} = $1`, [value]);
     res.json(`${property} was updated to ${value}`);
   } catch (err) {
     console.error(err.message);
