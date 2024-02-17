@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 // Route to retrieve data from the database
 app.get("/data", async (req, res) => {
   try {
-    const getData = await pool.query('SELECT * FROM tipsdistributiondata');
+    const getData = await pool.query('SELECT * FROM tipsdata');
     res.json(getData.rows);
   } catch (err) {
     console.error(err.message);
