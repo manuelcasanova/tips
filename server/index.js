@@ -32,5 +32,18 @@ app.get("/data", async (req, res) => {
   }
 });
 
+// Route to update a specific property in the database
+app.put("/data/:property", async (req, res) => {
+  const { property } = req.params;
+  const { value } = req.body;
 
+  try {
+    // Use parameterized queries to prevent SQL injection
+    await pool.query(`UPDATE tipsdistributiondata SET ${property} = $1`, [value]);
+    res.json(`${property} was updated to ${value}`);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Internal Server Error');
+  }
+});
 
