@@ -13,4 +13,4 @@ const allowedOrigins = [
   'https://www.localhost:3000'
 ];
 
-export default allowedOrigins;
+module.exports = allowedOrigins;

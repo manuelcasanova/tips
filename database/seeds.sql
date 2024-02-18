@@ -1,4 +1,4 @@
-INSERT INTO tipsdistributiondata 
+INSERT INTO tipsdata 
 
 (  fulltips,
   assistanttips,
